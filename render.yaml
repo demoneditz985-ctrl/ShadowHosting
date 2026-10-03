@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: shadow-hosting
+    runtime: docker
+    plan: starter
+    envVars:
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DATA_DIR
+        value: /data
+    disk:
+      name: shadow-data
+      mountPath: /data
+      sizeGB: 1
